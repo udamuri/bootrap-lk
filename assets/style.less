@@ -1,0 +1,57 @@
+.border-radius(@radius : 0)
+{
+	 -webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.affix {
+  top: 0;
+  width: 100%;
+    .border-radius(0);
+}
+
+.affix + .container-fluid {
+  padding-top: 70px;
+}
+
+.container-fluid
+{
+	width: 100%;
+	background-color:#F2ECE0;
+	color:#fff;
+	height:200px;
+	margin: 0;
+	padding: 0;
+}
+
+.top-bar {
+    background: #f2ece0 none repeat scroll 0 0;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+}
+.top-bar::before, .top-bar::after {
+    content: "";
+    display: block;
+    height: 1px;
+    position: absolute;
+    width: 100%;
+}
+.top-bar::before {
+    background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
+    bottom: 0;
+}
+.top-bar::after {
+    background: #fff none repeat scroll 0 0;
+    bottom: -1px;
+}
+
+
+header, .header {
+    background: #f2ece0 none repeat scroll 0 0;
+    height: 150px;
+    line-height: 150px;
+    overflow: hidden;
+}
+
