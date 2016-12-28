@@ -1,19 +1,19 @@
 @brown_color : #4E2E1F;
-@primary_color : #E9E9E9;
+
+@default_color : #E9E9E9;
 @danger_color : #d9534f;
-@brandprimary_color : #428bca;
+@primary_color : #428bca;
+@success_color : #5cb85c;
+@info_color:    #5bc0de;
+@warning_color: #f0ad4e;
+
 @white_color : #fff;
+
 @facebook_color : #3F5D9A;
 @twitter_color : #1DA1F2;
 @youtube_color : #C8312B;
 @instagram_color : #4C411E;
-@green_color      : #A2BB77;
 @gray_color : #eee;
-
-@bgDefault      : #A2BB77;
-@bgHighlight    : #F2ECE0;
-@colDefault     : #fff;
-@colHighlight   : #A2BB77;
 
 @min1440:  ~"(min-width: 1440px)";
 @min1024:  ~"(min-width: 1024px)";
@@ -23,13 +23,29 @@
 @min993max1200: ~"(min-width: 993px) and (max-width: 1200px)";
 
 body {
-	background: #EEEEEE;
+	background: @default_color;
 }
 
-.margin-top-30
-{
-	margin-top: 30px;
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow:         @style @c;
 }
+
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+
+.text-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-text-shadow: @style @c;
+  text-shadow:         @style @c;
+}
+
+.text-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .text-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+
+.margin-top-10{margin-top: 10px;}
+.margin-top-30{margin-top: 30px;}
 .border-radius(@radius : 0)
 {
 	 -webkit-border-radius: @radius;
@@ -49,7 +65,7 @@ body {
 nav.affix-top {padding-bottom: 0;margin-bottom:0;}
 
 .top-bar {
-    background: @primary_color none repeat scroll 0 0;
+    background: @default_color none repeat scroll 0 0;
     height: 40px;
     line-height: 40px;
     position: relative;
@@ -130,9 +146,13 @@ nav.affix-top {padding-bottom: 0;margin-bottom:0;}
 }
 
 header {
-    background: @primary_color none repeat scroll 0 0;
+    background: @default_color none repeat scroll 0 0;
     height: 100px;
     overflow: hidden;
+    h1 {
+    	color: @success_color;
+    	.text-shadow(0 0 3px, 20%)
+    }
 }
 
 section#mySlider 
@@ -141,7 +161,6 @@ section#mySlider
 	width: 100%;
 
 	.carousel-inner {
-		overflow: visible;
 	    position: relative;
 	    width: 100%;
 	    height: 500px;
@@ -158,7 +177,7 @@ section#mySlider
 		    	bottom: 0;
 		    	.container > .caption-container {
 				    	background: rgba(78, 46, 31, 0.4) none repeat scroll 0 0;
-					    border-top: 5px solid @bgDefault;
+					    border-top: 5px solid @success_color;
 					    display: inline-block;
 					    float: left;
 					    padding: 15px;
@@ -167,11 +186,11 @@ section#mySlider
 
 					    .btn-nex-prev
 					    {
-					    	background-color:@bgDefault;
+					    	background-color:@success_color;
 					    	color: @white_color;
 					    	margin-right: 2px;
 					    	padding: 5px;
-					    	border: 1px solid @bgDefault;
+					    	border: 1px solid @success_color;
 					    }
 				}
 		    }
@@ -224,7 +243,7 @@ section#mySlider
 }
 
 .affix + section#mySlider  {
-  padding-top: 70px;
+  /*padding-top: 70px;*/
 }
 
 .height-100{height: 100px;}
@@ -240,6 +259,16 @@ section#mySlider
 		margin-bottom: 5px;
 		> h1, .cwarp-header h2, .cwarp-header h3, .cwarp-header h5, .cwarp-header h5, .cwarp-header h6{
 			font-size: 15pt;
+			padding-top: 0;
+			margin-top: 0
+		}
+	}
+
+	.cwarp-header-small {
+		border-bottom: 1px solid @gray_color;
+		margin-bottom: 5px;
+		> h1, .cwarp-header h2, .cwarp-header h3, .cwarp-header h5, .cwarp-header h5, .cwarp-header h6{
+			font-size: 11pt;
 			padding-top: 0;
 			margin-top: 0
 		}
@@ -266,17 +295,25 @@ section#mySlider
 
 .cwrap-default-line
 {
- 	border-top: 5px solid @green_color;
+ 	border-top: 5px solid @success_color;
 }
 
 .cwrap-primary-line
 {
- 	border-top: 5px solid @brandprimary_color;
+ 	border-top: 5px solid @primary_color;
 }
 
 .cwrap-danger-line
 {
  	border-top: 5px solid @danger_color;
+}
+
+footer.my-footer
+{
+	padding: 10px 0;
+	background: @success_color;
+	color: @white_color;
+	min-height: 50px;
 }
 
 
