@@ -1,10 +1,19 @@
 @brown_color : #4E2E1F;
 @primary_color : #E9E9E9;
+@danger_color : #d9534f;
+@brandprimary_color : #428bca;
 @white_color : #fff;
 @facebook_color : #3F5D9A;
 @twitter_color : #1DA1F2;
 @youtube_color : #C8312B;
 @instagram_color : #4C411E;
+@green_color      : #A2BB77;
+@gray_color : #eee;
+
+@bgDefault      : #A2BB77;
+@bgHighlight    : #F2ECE0;
+@colDefault     : #fff;
+@colHighlight   : #A2BB77;
 
 @min1440:  ~"(min-width: 1440px)";
 @min1024:  ~"(min-width: 1024px)";
@@ -14,10 +23,13 @@
 @min993max1200: ~"(min-width: 993px) and (max-width: 1200px)";
 
 body {
-
+	background: #EEEEEE;
 }
 
-
+.margin-top-30
+{
+	margin-top: 30px;
+}
 .border-radius(@radius : 0)
 {
 	 -webkit-border-radius: @radius;
@@ -146,7 +158,7 @@ section#mySlider
 		    	bottom: 0;
 		    	.container > .caption-container {
 				    	background: rgba(78, 46, 31, 0.4) none repeat scroll 0 0;
-					    border-top: 5px solid @brown_color;
+					    border-top: 5px solid @bgDefault;
 					    display: inline-block;
 					    float: left;
 					    padding: 15px;
@@ -155,11 +167,11 @@ section#mySlider
 
 					    .btn-nex-prev
 					    {
-					    	background-color:@brown_color;
+					    	background-color:@bgDefault;
 					    	color: @white_color;
 					    	margin-right: 2px;
 					    	padding: 5px;
-					    	border: 1px solid @brown_color;
+					    	border: 1px solid @bgDefault;
 					    }
 				}
 		    }
@@ -215,7 +227,57 @@ section#mySlider
   padding-top: 70px;
 }
 
+.height-100{height: 100px;}
+.height-150{height: 150px;}
+.height-200{height: 200px;}
+.cwrap
+{
+	padding: 10px 10px;
+	width: 100%;
 
+	.cwarp-header {
+		border-bottom: 1px solid @gray_color;
+		margin-bottom: 5px;
+		> h1, .cwarp-header h2, .cwarp-header h3, .cwarp-header h5, .cwarp-header h5, .cwarp-header h6{
+			font-size: 15pt;
+			padding-top: 0;
+			margin-top: 0
+		}
+	}
+
+	.cwarp-body
+	{
+
+	}
+
+	.cwrap-footer
+	{
+		padding: 5px 0 5px 0;
+		border-top: 1px solid @gray_color;
+		margin-top: 5px;
+		height: auto;
+	}
+}
+
+.cwrap-default
+{
+	background-color: @white_color;
+}
+
+.cwrap-default-line
+{
+ 	border-top: 5px solid @green_color;
+}
+
+.cwrap-primary-line
+{
+ 	border-top: 5px solid @brandprimary_color;
+}
+
+.cwrap-danger-line
+{
+ 	border-top: 5px solid @danger_color;
+}
 
 
 
