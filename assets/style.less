@@ -5,6 +5,19 @@
 @twitter_color : #1DA1F2;
 @youtube_color : #C8312B;
 @instagram_color : #4C411E;
+
+@min1440:  ~"(min-width: 1440px)";
+@min1024:  ~"(min-width: 1024px)";
+@jumbo:  ~"(min-width: 768px)";
+@midi:  ~"(max-width: 767px)";
+@min768max992: ~"(min-width: 768px) and (max-width: 992px)";
+@min993max1200: ~"(min-width: 993px) and (max-width: 1200px)";
+
+body {
+
+}
+
+
 .border-radius(@radius : 0)
 {
 	 -webkit-border-radius: @radius;
@@ -15,22 +28,13 @@
 .affix {
   top: 0;
   width: 100%;
-    .border-radius(0);
+  z-index: 9999;
+  .border-radius(0);
+  border-left: none;
+  border-right: none;
 }
 
-.affix + .container-fluid {
-  padding-top: 70px;
-}
-
-.container-fluid
-{
-	width: 100%;
-	background-color:#F2ECE0;
-	color:#fff;
-	height:200px;
-	margin: 0;
-	padding: 0;
-}
+nav.affix-top {padding-bottom: 0;margin-bottom:0;}
 
 .top-bar {
     background: @primary_color none repeat scroll 0 0;
@@ -113,14 +117,106 @@
 
 }
 
-
-
-header, .header {
+header {
     background: @primary_color none repeat scroll 0 0;
-    height: 150px;
-    line-height: 150px;
+    height: 100px;
     overflow: hidden;
 }
+
+section#mySlider 
+{
+	height: 500px;
+	width: 100%;
+
+	.carousel-inner {
+		overflow: visible;
+	    position: relative;
+	    width: 100%;
+	    height: 500px;
+	    .item {
+	    	height: 100%;
+		    img.mycarouselimage{
+				width: 100%;
+			    height: 100%;
+			}
+
+		    .carousel-caption
+		    {
+		    	position: absolute;
+		    	bottom: 0;
+		    	.container > .caption-container {
+				    	background: rgba(78, 46, 31, 0.4) none repeat scroll 0 0;
+					    border-top: 5px solid @brown_color;
+					    display: inline-block;
+					    float: left;
+					    padding: 15px;
+					    text-align: center;
+					    width: 50%;
+
+					    .btn-nex-prev
+					    {
+					    	background-color:@brown_color;
+					    	color: @white_color;
+					    	margin-right: 2px;
+					    	padding: 5px;
+					    	border: 1px solid @brown_color;
+					    }
+				}
+		    }
+		  }
+	}
+
+	@media @midi
+	{
+		height: 300px;
+		width: 100%;
+
+		.carousel-inner {
+			overflow: visible;
+		    position: relative;
+		    width: 100%;
+		    height: 300px;
+		    .item {
+		    	height: 100%;
+			    img.mycarouselimage{
+					width: 100%;
+				    height: 100%;
+				}
+
+			    .carousel-caption
+			    {
+			    	position: absolute;
+			    	bottom: 0;
+			    	.container > .caption-container {
+					    	background: rgba(78, 46, 31, 0.4) none repeat scroll 0 0;
+						    border-top: 5px solid @brown_color;
+						    display: inline-block;
+						    float: left;
+						    padding: 15px;
+						    text-align: center;
+						    width: 100%;
+
+						    .btn-nex-prev
+						    {
+						    	background-color:@brown_color;
+						    	color: @white_color;
+						    	margin-right: 2px;
+						    	padding: 5px;
+						    	border: 1px solid @brown_color;
+						    }
+					}
+			    }
+			  }
+		}
+	}
+}
+
+.affix + section#mySlider  {
+  padding-top: 70px;
+}
+
+
+
 
 
 
