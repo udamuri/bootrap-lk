@@ -25,6 +25,12 @@
 body {
 	background: @default_color;
 }
+.default{color: @default_color;}
+.primary{color: @primary_color;}
+.danger{color: @danger_color;}
+.success{color: @success_color;}
+.info{color: @info_color;}
+.warning{color: @warning_color;}
 
 .box-shadow(@style, @c) when (iscolor(@c)) {
   -webkit-box-shadow: @style @c;
@@ -147,9 +153,11 @@ nav.affix-top {padding-bottom: 0;margin-bottom:0;}
 
 header {
     background: @default_color none repeat scroll 0 0;
-    height: 100px;
+    height: 70px;
     overflow: hidden;
     h1 {
+    	padding: 0;
+    	margin: 10px 0;
     	color: @success_color;
     	.text-shadow(0 0 3px, 20%)
     }
@@ -243,7 +251,7 @@ section#mySlider
 }
 
 .affix + section#mySlider  {
-  /*padding-top: 70px;*/
+  margin-top: 70px;
 }
 
 .height-100{height: 100px;}
@@ -314,6 +322,13 @@ footer.my-footer
 	background: @success_color;
 	color: @white_color;
 	min-height: 50px;
+}
+
+.img-fammily
+{
+	.border-radius(50%);
+	border:3px solid @primary_color;
+	padding: 3px;
 }
 
 
