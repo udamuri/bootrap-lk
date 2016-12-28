@@ -1,3 +1,10 @@
+@brown_color : #4E2E1F;
+@primary_color : #E9E9E9;
+@white_color : #fff;
+@facebook_color : #3F5D9A;
+@twitter_color : #1DA1F2;
+@youtube_color : #C8312B;
+@instagram_color : #4C411E;
 .border-radius(@radius : 0)
 {
 	 -webkit-border-radius: @radius;
@@ -26,32 +33,94 @@
 }
 
 .top-bar {
-    background: #f2ece0 none repeat scroll 0 0;
+    background: @primary_color none repeat scroll 0 0;
     height: 40px;
     line-height: 40px;
     position: relative;
+
+    ul {
+	    list-style-type: none;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	}
+
+	li {
+	    float: left;
+	}
+
+	li a {
+	    display: block;
+	    color: @brown_color;
+	    text-align: center;
+	    padding: 0 10px 0 10px;
+	    text-decoration: none;
+	    font-size: 15pt;
+	}
+
+	li a.facebook {
+
+		&:hover {
+			background-color: @facebook_color;
+	    	color: @white_color;	
+		}   
+	}
+
+	li a.twitter {
+
+		&:hover
+		{
+			background-color: @twitter_color;
+	    	color: @white_color;
+		}  
+	}
+
+	li a.youtube {
+
+		&:hover
+		{
+			background-color: @youtube_color;
+	    	color: @white_color;
+		}
+	}
+
+	li a.instagram {
+
+		&:hover
+		{
+			background-color: @instagram_color;
+	    	color: @white_color;
+		}
+	}
+
+	&::before, &::after
+	{
+		content: "";
+	    display: block;
+	    height: 1px;
+	    position: absolute;
+	    width: 100%;
+	} 
+
+	&::before {
+	    background: rgba(204, 204, 204, 1) none repeat scroll 0 0;
+	    bottom: 0;
+	}
+	&::after {
+	    background: #fff none repeat scroll 0 0;
+	    bottom: -1px;
+	}
+
 }
-.top-bar::before, .top-bar::after {
-    content: "";
-    display: block;
-    height: 1px;
-    position: absolute;
-    width: 100%;
-}
-.top-bar::before {
-    background: rgba(0, 0, 0, 0.1) none repeat scroll 0 0;
-    bottom: 0;
-}
-.top-bar::after {
-    background: #fff none repeat scroll 0 0;
-    bottom: -1px;
-}
+
 
 
 header, .header {
-    background: #f2ece0 none repeat scroll 0 0;
+    background: @primary_color none repeat scroll 0 0;
     height: 150px;
     line-height: 150px;
     overflow: hidden;
 }
+
+
 
