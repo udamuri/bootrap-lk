@@ -7,6 +7,13 @@
 @info_color:    #5bc0de;
 @warning_color: #f0ad4e;
 
+@default-darker:  lighten(@default_color, 13.5%);
+@danger-darker:  lighten(@danger_color, 13.5%);
+@primary-darker:  lighten(@primary_color, 13.5%);
+@success-darker:  lighten(@success_color, 13.5%);
+@info-darker:  lighten(@info_color, 13.5%);
+@warning-darker:  lighten(@warning_color, 13.5%);
+
 @white_color : #fff;
 
 @facebook_color : #3F5D9A;
@@ -191,6 +198,10 @@ section#mySlider
 					    padding: 15px;
 					    text-align: center;
 					    width: 50%;
+					    &:hover
+					    {
+					    	background: rgba(78, 46, 31, 0.6) none repeat scroll 0 0;
+					    }
 
 					    .btn-nex-prev
 					    {
@@ -199,6 +210,9 @@ section#mySlider
 					    	margin-right: 2px;
 					    	padding: 5px;
 					    	border: 1px solid @success_color;
+					    	&:hover{
+					    		background-color:@success-darker;
+					    	}
 					    }
 				}
 		    }
