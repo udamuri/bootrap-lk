@@ -7,6 +7,8 @@
 @info_color:    #5bc0de;
 @warning_color: #f0ad4e;
 
+@green_color: #428442;
+
 @default-darker:  lighten(@default_color, 13.5%);
 @danger-darker:  lighten(@danger_color, 13.5%);
 @primary-darker:  lighten(@primary_color, 13.5%);
@@ -349,6 +351,22 @@ footer.my-footer
 	&:hover
 	{
 		border: 1px solid red;
+	}
+}
+
+.navbar-form-edit
+{
+
+	input.form-control
+	{
+		.border-radius(0);
+		border: 1px solid @green_color;
+	}
+
+	.input-group-btn button
+	{
+		.border-radius(0);
+		border: 1px solid @green_color;
 	}
 }
 

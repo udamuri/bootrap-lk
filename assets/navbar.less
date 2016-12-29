@@ -3,6 +3,7 @@
 @bgHighlight    : #428442;
 @colDefault     : #fff;
 @colHighlight   : #fff;
+@colHighlight1   : #D1FFD1;
 @dropDown       : false;
 
 .border-radius(@radius : 0)
@@ -42,8 +43,9 @@
     > li {
       > a {
         color: @colDefault;
+        font-size: 12pt;
         &:hover,  &:focus {
-          color: @colDefault; }
+          color: @colHighlight1; }
           }
       }
     .ddm;
