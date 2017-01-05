@@ -14,6 +14,7 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/navbar.css" rel="stylesheet">
     <link href="assets/style.css" rel="stylesheet">
+    <link href="assets/carousel.css" rel="stylesheet">
     <link href="assets/font_awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -190,6 +191,7 @@
               </div>
           </div>
         </div>
+        <hr class="transition-timer-carousel-progress-bar" />
     </section>
     
 
@@ -361,6 +363,31 @@ UPDATED Perfect Places ® Privacy Statement
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/imageMapResizer.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          var percent = 0, bar = $('.transition-timer-carousel-progress-bar'), crsl = $('#mySlider');
+          function progressBarCarousel() {
+            bar.css({width:percent+'%'});
+           percent = percent +0.5;
+            if (percent>100) {
+                percent=0;
+                crsl.carousel('next');
+            }      
+          }
+          crsl.carousel({
+              interval: false,
+              pause: true
+          }).on('slid.bs.carousel', function () {});var barInterval = setInterval(progressBarCarousel, 30);
+          crsl.hover(
+              function(){
+                  clearInterval(barInterval);
+              },
+              function(){
+                  barInterval = setInterval(progressBarCarousel, 30);
+              })
+        });
+
+    </script>
     <!-- http://www.image-maps.com -->
   </body>
 </html>

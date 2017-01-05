@@ -223,8 +223,9 @@ section#mySlider
 
 	@media @midi
 	{
-		height: 300px;
-		width: 100%;
+		position: relative;
+	    width: 100%;
+	    height: 300px;
 
 		.carousel-inner {
 		    position: relative;
@@ -243,20 +244,27 @@ section#mySlider
 			    	bottom: 0;
 			    	.container > .caption-container {
 					    	background: rgba(78, 46, 31, 0.4) none repeat scroll 0 0;
-						    border-top: 5px solid @brown_color;
+						    border-top: 5px solid @success_color;
 						    display: inline-block;
 						    float: left;
 						    padding: 15px;
 						    text-align: center;
 						    width: 100%;
+						    &:hover
+						    {
+						    	background: rgba(78, 46, 31, 0.6) none repeat scroll 0 0;
+						    }
 
 						    .btn-nex-prev
 						    {
-						    	background-color:@brown_color;
+						    	background-color:@success_color;
 						    	color: @white_color;
 						    	margin-right: 2px;
 						    	padding: 5px;
-						    	border: 1px solid @brown_color;
+						    	border: 1px solid @success_color;
+						    	&:hover{
+						    		background-color:@success-darker;
+						    	}
 						    }
 					}
 			    }
