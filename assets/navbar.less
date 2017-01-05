@@ -30,6 +30,10 @@
       background-color: @bgHighlight; }}}
 .navbar-default {
   background-color: @bgDefault;
+  background: -webkit-linear-gradient(@bgDefault, @bgHighlight); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(@bgDefault, @bgHighlight); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(@bgDefault, @bgHighlight); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(@bgDefault, @bgHighlight); /* Standard syntax (must be last) */
   border-color: @bgHighlight;
   .border-radius(0);
   /*border-color: @bgDefault;*/
