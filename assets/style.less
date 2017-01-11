@@ -350,7 +350,53 @@ footer.my-footer
 
 .cwarp-body img.map-usa
 {
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+.content-item
+{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	.item
+	{
+		width: 100%;
+		height: 100%;
+		.de-img
+		{
+			width: 100%;
+			img {
+				margin-left: auto; 
+				margin-right: auto;
+			}
+		}
+		&:hover .de-img::before {
+		    opacity: 1;
+		    transform: scale(1);
+		    z-index: 1;
+		}
+	}
 }
 
+.item .de-img::before {
+    /*background-color: rgba(167, 204, 56, 0.4);*/
+    .border-radius(.3em);
+    position: absolute;
+    left: 0; 
+	right: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+    top: 0;
+    bottom: 0;
+    background-color: rgba(92, 184, 92, 0.4);
+    content: "";   
+    height: 100%;
+    opacity: 0;
+    transform: scale(0.2);
+    transition: all 300ms ease 0s;
+    width: 100%;
+    @media @midi {
+    	width: 100%;
+    }
+}
 
