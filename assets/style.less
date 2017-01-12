@@ -193,18 +193,19 @@ section#mySlider
 		    	position: absolute;
 		    	bottom: 0;
 		    	.container > .caption-container {
-				    	background: rgba(78, 46, 31, 0.4) none repeat scroll 0 0;
+				    	background: rgba(0, 0, 0, 0.2) none repeat scroll 0 0;
 					    border-top: 5px solid @success_color;
 					    display: inline-block;
 					    float: left;
 					    padding: 15px;
 					    text-align: center;
 					    width: 50%;
-					     -webkit-transition: background 2s; /* For Safari 3.1 to 6.0 */
-    					transition: background 2s;
+					     -webkit-transition: background 800ms; /* For Safari 3.1 to 6.0 */
+    					transition: background 800ms;
+    					color: @white_color;
 					    &:hover
 					    {
-					    	background: rgba(78, 46, 31, 0.9) none repeat scroll 0 0;
+					    	background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
 					    }
 
 					    .btn-nex-prev
@@ -401,5 +402,15 @@ footer.my-footer
     -webkit-transition: all 300ms ease 0s; /* For Safari 3.1 to 6.0 */
     transition: all 300ms ease 0s;
     width: 100%;
+}
+
+.transition-timer-carousel-progress-bar {
+    height: 3px;
+    background-color: @primary_color;
+    width: 0%;
+    margin: 0px 0px 0px 0px;
+    border: none;
+    z-index: 11;
+    position: relative;
 }
 
